@@ -1,4 +1,6 @@
-﻿namespace KollinAPI.DataValidation
+﻿using KollinAPI.Models;
+
+namespace KollinAPI.DataValidation
 {
     public static class KollinValidator
     {
@@ -30,5 +32,11 @@
 
             return (isValid, errorMessage);
         }
+
+        public static bool ValidateSize(Kollin kollin) => !(kollin is null 
+                || kollin.Width < 1 || kollin.Width > 60
+                || kollin.Height < 1 || kollin.Height > 60
+                || kollin.Length < 1 || kollin.Length > 60
+                || kollin.Weight < 1 || kollin.Weight > 20000);
     }
 }
