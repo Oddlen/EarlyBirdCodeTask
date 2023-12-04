@@ -5,6 +5,8 @@ VisualStudioVersion = 17.8.34322.80
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KollinAPI", "KolinAPI\KollinAPI.csproj", "{45624DF9-D035-4894-B190-0679D7D84D3D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KollinAPITests", "KollinAPITests\KollinAPITests.csproj", "{537947CA-0CED-4DFE-8375-41531A6E309A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{45624DF9-D035-4894-B190-0679D7D84D3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45624DF9-D035-4894-B190-0679D7D84D3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45624DF9-D035-4894-B190-0679D7D84D3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{537947CA-0CED-4DFE-8375-41531A6E309A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{537947CA-0CED-4DFE-8375-41531A6E309A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{537947CA-0CED-4DFE-8375-41531A6E309A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{537947CA-0CED-4DFE-8375-41531A6E309A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
