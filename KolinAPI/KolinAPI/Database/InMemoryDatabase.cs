@@ -1,4 +1,5 @@
-﻿using KollinAPI.Models;
+﻿using KollinAPI.DataValidation;
+using KollinAPI.Models;
 
 namespace KollinAPI.Database
 {
@@ -23,6 +24,13 @@ namespace KollinAPI.Database
         public Kollin? GetKolli(string Id)
         {
             return Kollins.SingleOrDefault(x => x.Id == Id);
+        }
+
+        public bool AddKolli(Kollin kollin)
+        {
+            if (kollin is null || !KollinValidator.ValidateId(kollin.Id).Item1 || Kollins.Any(x => x.Id == kollin.Id)) return false;
+            Kollins.Add(kollin);
+            return true;
         }
     }
 }

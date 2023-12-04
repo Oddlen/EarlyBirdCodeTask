@@ -1,9 +1,7 @@
 using KollinAPI.Database;
 using KollinAPI.DataValidation;
 using KollinAPI.Models;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
-using System.Net;
 
 namespace KollinAPI.Controllers
 {
@@ -32,6 +30,22 @@ namespace KollinAPI.Controllers
             if (kolli is null) return NotFound();
 
             return Ok(kolli);
+        }
+
+        [HttpPost]
+        public IActionResult Package(Kollin kollin)
+        {
+            if (kollin is null) return BadRequest();
+
+            (var isValid, var Message) = KollinValidator.ValidateId(kollin.Id);
+
+            if (!isValid) return BadRequest(Message);
+
+            if (!KollinValidator.ValidateSize(kollin)) return BadRequest("Package size is not allowed.");
+
+            if (_database.AddKolli(kollin)) return Ok();
+
+            return BadRequest("Package already exists.");
         }
     }
 }
